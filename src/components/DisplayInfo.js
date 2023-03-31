@@ -1,6 +1,6 @@
 import React from "react";
 import "./DisplayInfo.scss";
-import logo from "./../logo.svg";
+// import logo from "./../logo.svg";
 
 class DisplayInfo extends React.Component {
   state = {
@@ -22,7 +22,7 @@ class DisplayInfo extends React.Component {
     //template + logic.js
     return (
       <div className="display-info-container">
-        <img src={logo} />
+        {/* <img src={logo} /> */}
         <div>
           <span
             onClick={() => {
@@ -37,12 +37,22 @@ class DisplayInfo extends React.Component {
         {this.state.isShowListUser && (
           <>
             {listUsers.map((user, index) => {
+              console.log(user);
               console.log(">>> Check map user", user);
 
               return (
                 <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
-                  <div>My name is {user.name}</div>
-                  <div>My age is {user.age}</div>
+                  <div>
+                    <div>My name is {user.name}</div>
+                    <div>My age is {user.age}</div>
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => this.props.handleDeleteUser(user.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                   <hr />
                 </div>
               );

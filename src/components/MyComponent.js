@@ -15,7 +15,16 @@ class MyComponent extends React.Component {
 
   handleAddNewUser = (userObj) => {
     console.log("check data from parent: ", userObj);
-    this.setState({ listUsers: [...this.state.listUsers, userObj] }); //this is the last obj
+    this.setState({ listUsers: [userObj, ...this.state.listUsers] });
+    // this.setState({ listUsers: [...this.state.listUsers, userObj] }); //this is the last obj
+  };
+
+  handleDeleteUser = (userId) => {
+    let listUsersClone = [...this.state.listUsers];
+    listUsersClone = listUsersClone.filter((item) => item.id !== userId); //lọc với những cái trùng
+    this.setState({
+      listUsers: listUsersClone,
+    });
   };
   //jsx
   render() {
@@ -26,7 +35,10 @@ class MyComponent extends React.Component {
           <AddUserInfo handleAddNewUser={this.handleAddNewUser}></AddUserInfo>
           <br />
           <br />
-          <DisplayInfo listUsers={this.state.listUsers}></DisplayInfo>
+          <DisplayInfo
+            listUsers={this.state.listUsers}
+            handleDeleteUser={this.handleDeleteUser}
+          ></DisplayInfo>
         </div>
         <div className="b"></div>
       </>
