@@ -12,11 +12,14 @@ class DisplayInfo extends React.Component {
       isShowListUser: !this.state.isShowListUser,
     });
   };
+
   render() {
     //destructuring array
     const { listUsers } = this.props;
     console.log(listUsers);
     //props = vt tat property
+
+    //template + logic.js
     return (
       <div className="display-info-container">
         <img src={logo} />
@@ -32,7 +35,7 @@ class DisplayInfo extends React.Component {
           </span>
         </div>
         {this.state.isShowListUser && (
-          <div>
+          <>
             {listUsers.map((user, index) => {
               console.log(">>> Check map user", user);
 
@@ -44,7 +47,7 @@ class DisplayInfo extends React.Component {
                 </div>
               );
             })}
-          </div>
+          </>
         )}
       </div>
     );

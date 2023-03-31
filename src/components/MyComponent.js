@@ -19,7 +19,7 @@ class MyComponent extends React.Component {
   };
   //jsx
   render() {
-    //dry: dont repeat your self
+    //dry: dont repeat yourself
     return (
       <>
         <div className="a">
