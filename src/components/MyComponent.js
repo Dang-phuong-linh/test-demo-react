@@ -7,9 +7,9 @@ import UserInfo from "./UserInfo";
 class MyComponent extends React.Component {
   state = {
     listUsers: [
-      { id: 1, name: "Dang Phuong Linh", age: "20" },
-      { id: 2, name: "Banh Bao", age: "12" },
-      { id: 3, name: "Em be", age: "19" },
+      { id: 1, name: "Dang Phuong Linh", age: "18" },
+      { id: 2, name: "Banh Bao", age: "26" },
+      { id: 3, name: "Em be", age: "69" },
     ],
   };
   //jsx
