@@ -4,6 +4,7 @@ import "./DisplayInfo.scss";
 
 class DisplayInfo extends React.Component {
   constructor(props) {
+    console.log(">> Call contrucstor: 1");
     super(props);
     //babel compiler
     this.state = {
@@ -11,13 +12,27 @@ class DisplayInfo extends React.Component {
     };
   }
 
+  componentDidMount() {
+    console.log(">>>Call me component did mount");
+    setTimeout(() => {
+      document.title = "Trang cua Banh Bao";
+    }, 3000);
+  }
   handleShowHide = () => {
     this.setState({
       isShowListUser: !this.state.isShowListUser,
     });
   };
-
+  componentDidUpdate(prevProps, prevState, snapShot) {
+    console.log(">>> call me component did update", this.props, prevProps);
+    if (this.props.listUsers !== prevProps.listUsers) {
+      if (this.props.listUsers.length === 5) {
+        alert("you got 5 users");
+      }
+    }
+  }
   render() {
+    console.log(">>>call me render");
     //destructuring array
     const { listUsers } = this.props;
     console.log(listUsers);
