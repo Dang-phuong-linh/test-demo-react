@@ -18,6 +18,9 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import sidebarBg from "../../assets/bg2.jpg";
+import { DiReact } from "react-icons/di";
+import { MDashboard } from "react-icons/md";
+import "./SideBar.scss";
 
 const SideBar = (props) => {
   const { image, collapsed, toggled, handleToggleSidebar } = props;
@@ -43,7 +46,8 @@ const SideBar = (props) => {
               whiteSpace: "nowrap",
             }}
           >
-            Phuong Linh Xinh
+            <DiReact size={"3em"} color="blue" />
+            <span>Phuong Linh Xinh</span>
           </div>
         </SidebarHeader>
 
@@ -51,20 +55,22 @@ const SideBar = (props) => {
           <Menu iconShape="circle">
             <MenuItem
               icon={<FaTachometerAlt />}
-              suffix={<span className="badge red">new</span>}
+              // suffix={<span className="badge red">new</span>}
             >
-              dashboard
+              Dashboard
             </MenuItem>
-            <MenuItem icon={<FaGem />}>components</MenuItem>
+            {/* <MenuItem icon={<FaGem />}>components</MenuItem> */}
           </Menu>
           <Menu iconShape="circle">
             <SubMenu
-              suffix={<span className="badge yellow">3</span>}
-              icon={<FaRegLaughWink />}
+              // suffix={<span className="badge yellow">3</span>}
+              // icon={<FaRegLaughWink />}
+              icon={<FaGem />}
+              title="Features"
             >
-              <MenuItem> 1</MenuItem>
-              <MenuItem> 2</MenuItem>
-              <MenuItem> 3</MenuItem>
+              <MenuItem> Quản lí User</MenuItem>
+              <MenuItem> Quản lí Bài Quiz</MenuItem>
+              <MenuItem> Quản lí Câu Hỏi</MenuItem>
             </SubMenu>
           </Menu>
         </SidebarContent>
@@ -77,12 +83,12 @@ const SideBar = (props) => {
             }}
           >
             <a
-              href="https://github.com/azouaoui-med/react-pro-sidebar"
+              href="https://github.com/Dang-phuong-linh"
               target="_blank"
               className="sidebar-btn"
               rel="noopener noreferrer"
             >
-              <FaGithub />
+              {/* <FaGithub /> */}
               <span
                 style={{
                   whiteSpace: "nowrap",
@@ -90,7 +96,7 @@ const SideBar = (props) => {
                   overflow: "hidden",
                 }}
               >
-                viewSource
+                &#169; Phương Linh Xinh
               </span>
             </a>
           </div>
