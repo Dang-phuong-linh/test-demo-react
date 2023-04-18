@@ -21,6 +21,7 @@ import sidebarBg from "../../assets/bg2.jpg";
 import { DiReact } from "react-icons/di";
 import { MDashboard } from "react-icons/md";
 import "./SideBar.scss";
+import { Link } from "react-router-dom";
 
 const SideBar = (props) => {
   const { image, collapsed, toggled, handleToggleSidebar } = props;
@@ -46,7 +47,7 @@ const SideBar = (props) => {
               whiteSpace: "nowrap",
             }}
           >
-            <DiReact size={"3em"} color="blue" />
+            {/* <DiReact size={"3em"} color="blue" /> */}
             <span>Phuong Linh Xinh</span>
           </div>
         </SidebarHeader>
@@ -58,6 +59,7 @@ const SideBar = (props) => {
               // suffix={<span className="badge red">new</span>}
             >
               Dashboard
+              <Link to="/admins" />
             </MenuItem>
             {/* <MenuItem icon={<FaGem />}>components</MenuItem> */}
           </Menu>
@@ -68,7 +70,10 @@ const SideBar = (props) => {
               icon={<FaGem />}
               title="Features"
             >
-              <MenuItem> Quản lí User</MenuItem>
+              <MenuItem>
+                Quản lí User
+                <Link to="/admins/manage-users" />
+              </MenuItem>
               <MenuItem> Quản lí Bài Quiz</MenuItem>
               <MenuItem> Quản lí Câu Hỏi</MenuItem>
             </SubMenu>
